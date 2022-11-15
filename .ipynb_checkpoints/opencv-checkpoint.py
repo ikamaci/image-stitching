@@ -3,12 +3,11 @@ import numpy as np
 # This function will get click pixel coordinate that source image will be pasted to destination image
 def get_paste_position(event, x, y, flags, paste_coordinate_list):
     cv2.imshow('collect coordinate', img_dest_copy)
-    if event == cv2.EVENT_LBUTTONUP:
+    #if event == cv2.EVENT_LBUTTONUP:
     # Draw circle right in click position
-        cv2.circle(img_dest_copy, (x, y), 2, (0, 0, 255), -1)
+    cv2.circle(img_dest_copy, (x, y), 2, (0, 0, 255), -1)
     # Append new clicked coordinate to paste_coordinate_list
-        paste_coordinate_list.append([x, y])
-
+    paste_coordinate_list.append([x, y])
 if __name__ == '__main__':
     # Read source image
     img_src = cv2.imread('paris/paris_a.jpg', cv2.IMREAD_COLOR)
@@ -38,4 +37,3 @@ if __name__ == '__main__':
     cv2.imshow('result', img_dest)
     cv2.waitKey()
     cv2.destroyAllWindows()
-
